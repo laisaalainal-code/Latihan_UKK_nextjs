@@ -52,7 +52,8 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
-  Barang: 'Barang'
+  Barang: 'Barang',
+  Siswa: 'Siswa'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -99,6 +100,20 @@ export const BarangScalarFieldEnum = {
 export type BarangScalarFieldEnum = (typeof BarangScalarFieldEnum)[keyof typeof BarangScalarFieldEnum]
 
 
+export const SiswaScalarFieldEnum = {
+  id: 'id',
+  kode: 'kode',
+  nis: 'nis',
+  nama: 'nama',
+  kelas: 'kelas',
+  alamat: 'alamat',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SiswaScalarFieldEnum = (typeof SiswaScalarFieldEnum)[keyof typeof SiswaScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -133,4 +148,15 @@ export const BarangOrderByRelevanceFieldEnum = {
 } as const
 
 export type BarangOrderByRelevanceFieldEnum = (typeof BarangOrderByRelevanceFieldEnum)[keyof typeof BarangOrderByRelevanceFieldEnum]
+
+
+export const SiswaOrderByRelevanceFieldEnum = {
+  kode: 'kode',
+  nis: 'nis',
+  nama: 'nama',
+  kelas: 'kelas',
+  alamat: 'alamat'
+} as const
+
+export type SiswaOrderByRelevanceFieldEnum = (typeof SiswaOrderByRelevanceFieldEnum)[keyof typeof SiswaOrderByRelevanceFieldEnum]
 

@@ -35,3 +35,16 @@ model User {
  createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 }
+
+model Siswa {
+  id        Int      @id @default(autoincrement())
+  kode      String   @unique @db.VarChar(20)
+  nis       String?  @unique @db.VarChar(30)
+  nama      String
+  kelas     String?  @db.VarChar(50)
+  alamat    String?  @db.Text
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("siswa")
+}

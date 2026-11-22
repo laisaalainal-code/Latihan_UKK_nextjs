@@ -29,6 +29,11 @@ const listMenu = [
     "url" : "/admin/barang",
     "icon" : UserRound
   },  
+  { 
+    "name" : "Siswa",
+    "url" : "/admin/siswa",
+    "icon" : UserRound
+  },  
   
 ]
 

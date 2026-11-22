@@ -398,7 +398,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
-  Barang: 'Barang'
+  Barang: 'Barang',
+  Siswa: 'Siswa'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -414,7 +415,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "barang"
+    modelProps: "user" | "barang" | "siswa"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -550,6 +551,72 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Siswa: {
+      payload: Prisma.$SiswaPayload<ExtArgs>
+      fields: Prisma.SiswaFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SiswaFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SiswaFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload>
+        }
+        findFirst: {
+          args: Prisma.SiswaFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SiswaFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload>
+        }
+        findMany: {
+          args: Prisma.SiswaFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload>[]
+        }
+        create: {
+          args: Prisma.SiswaCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload>
+        }
+        createMany: {
+          args: Prisma.SiswaCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.SiswaDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload>
+        }
+        update: {
+          args: Prisma.SiswaUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload>
+        }
+        deleteMany: {
+          args: Prisma.SiswaDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SiswaUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.SiswaUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SiswaPayload>
+        }
+        aggregate: {
+          args: Prisma.SiswaAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSiswa>
+        }
+        groupBy: {
+          args: Prisma.SiswaGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SiswaGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SiswaCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SiswaCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -617,6 +684,20 @@ export const BarangScalarFieldEnum = {
 export type BarangScalarFieldEnum = (typeof BarangScalarFieldEnum)[keyof typeof BarangScalarFieldEnum]
 
 
+export const SiswaScalarFieldEnum = {
+  id: 'id',
+  kode: 'kode',
+  nis: 'nis',
+  nama: 'nama',
+  kelas: 'kelas',
+  alamat: 'alamat',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SiswaScalarFieldEnum = (typeof SiswaScalarFieldEnum)[keyof typeof SiswaScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -651,6 +732,17 @@ export const BarangOrderByRelevanceFieldEnum = {
 } as const
 
 export type BarangOrderByRelevanceFieldEnum = (typeof BarangOrderByRelevanceFieldEnum)[keyof typeof BarangOrderByRelevanceFieldEnum]
+
+
+export const SiswaOrderByRelevanceFieldEnum = {
+  kode: 'kode',
+  nis: 'nis',
+  nama: 'nama',
+  kelas: 'kelas',
+  alamat: 'alamat'
+} as const
+
+export type SiswaOrderByRelevanceFieldEnum = (typeof SiswaOrderByRelevanceFieldEnum)[keyof typeof SiswaOrderByRelevanceFieldEnum]
 
 
 
@@ -839,6 +931,7 @@ export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaC
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   barang?: Prisma.BarangOmit
+  siswa?: Prisma.SiswaOmit
 }
 
 /* Types for Logging */
