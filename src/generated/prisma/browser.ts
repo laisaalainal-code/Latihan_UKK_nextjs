@@ -27,3 +27,8 @@ export type User = Prisma.UserModel
  * 
  */
 export type Barang = Prisma.BarangModel
+/**
+ * Model Siswa
+ * 
+ */
+export type Siswa = Prisma.SiswaModel
